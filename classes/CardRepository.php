@@ -61,7 +61,7 @@ class CardRepository
         }
         //get all data as an assosiative array and return
         $row=$result->fetch_all(MYSQLI_ASSOC);
-        // echo '<td>'.$row['name'].'</td>';  a try out for a table look
+        // echo '<td>'.$row['name'].'</td>';  named row to try out for a table look
         echo '<pre>';
         // var_dump($row);
         echo '</pre>';

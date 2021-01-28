@@ -6,6 +6,8 @@
 		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
 
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +16,7 @@
 </head>
 <body>
 
-<h6>hey babies</h6>
+<h3>Calendar for New Borns</h3>
 <div class="row justify-content-center">
 	<form class="form-inline" method="POST" action="">
 	<div class="form-group">
@@ -32,10 +34,11 @@
 </div>
 <ul>
 <?php foreach ($cards as $card) : ?>
+<div class="tableContainer">
 	<table>
   <tr>
-    <th>Name</th>
-    <th>Month</th>
+    <div><th>Name</th></div>
+    <div><th>Month</th></div>
   </tr>
   <tr>
 	<td><?=$card['name']?></td>
@@ -52,12 +55,23 @@
 	</td>
   </tr>
   </table>
-  
+  </div>
 	
 <?php endforeach; ?>
 </ul>	
 
 <style>
+*{
+	font-family: 'Marck Script', cursive;
+
+}
+.tableContainer{
+
+  display: flex;	
+  align-items: center;
+  justify-content: center;	
+}
+
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -72,7 +86,7 @@ td {
 th{
 border: 1px solid #dddddd;
   padding: 8px;
-  text-align:center;
+  text-align:center; 
 
 }
 .delete,.edit{
