@@ -13,17 +13,8 @@
 	<title>Goodcard - track your collection of Pokémon cards</title>
 </head>
 <body>
-<?php if (isset($_SESSION['message'])): ?>
-	<div class="msg">
-		<?php 
-			echo $_SESSION['message']; 
-			unset($_SESSION['message']);
-		?>
-	</div>
-<?php endif ?>
 
-
-<h1>Collection</h1>
+<h6>hey babies</h6>
 <div class="row justify-content-center">
 	<form class="form-inline" method="POST" action="">
 	<div class="form-group">
@@ -41,10 +32,57 @@
 </div>
 <ul>
 <?php foreach ($cards as $card) : ?>
-    <li><?= $card['month'] ?></li>
+	<table>
+  <tr>
+    <th>Name</th>
+    <th>Month</th>
+  </tr>
+  <tr>
+	<td><?=$card['name']?></td>
+	<td><?=$card['month']?></td>
+	<td>
+	<div class="edit">
+	<a href="edit.php?edit=<?= $card['id'];?>" class ="btn btn-info ">Edit</a>
+	</div>
+	</td>
+	<td>
+	<div class="delete">
+	<a href="deleteIndex.php?delete=<?= $card['id'];?>" class ="btn btn-danger ">Delete</a>
+	</div>
+	</td>
+  </tr>
+  </table>
+  
+	
 <?php endforeach; ?>
 </ul>	
 
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
 
+td {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align:center;	
+}
+th{
+border: 1px solid #dddddd;
+  padding: 8px;
+  text-align:center;
+
+}
+.delete,.edit{
+	align-items:center;
+}
+
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
 </body>
 </html>
